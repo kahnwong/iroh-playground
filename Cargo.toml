@@ -5,6 +5,6 @@ edition = "2024"
 
 [dependencies]
 anyhow = "1.0.98"
-iroh = "0.35.0"
+iroh = { version = "0.35.0", features = ["discovery-local-network"] }
 rand = "0.9.1"
 tokio = "1.45.1"
