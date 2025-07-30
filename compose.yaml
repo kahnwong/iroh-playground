@@ -1,0 +1,13 @@
+services:
+  iroh-relay:
+    image: n0computer/iroh-relay:latest
+    container_name: iroh-relay
+    restart: unless-stopped
+    ports:
+      - "81:80" # HTTP relay port
+      - "9090:9090" # Metrics port (optional)
+    environment:
+      - RUST_LOG=debug
+    command: ["-c", "/config/relay.toml"]
+    volumes:
+      - ./config/relay.toml:/config/relay.toml:ro
